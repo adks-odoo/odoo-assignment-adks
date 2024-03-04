@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_picking_form_inherited" model="ir.ui.view">
+        <field name="name">stock_picking_batch.picking.form</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
+        <field name="arch" type="xml">
+            <xpath  expr="//field[@name='scheduled_date']" position="after">
+                <field name='vehicle'></field>
+                <field name='vehicle_category_id'></field>
+                <field name='weight' invisible="not vehicle_category_id"></field>
+                <field name='volume' invisible="not vehicle_category_id"></field>
+            </xpath>
+        </field>
+    </record>
+</odoo>
